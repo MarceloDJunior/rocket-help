@@ -3,10 +3,10 @@ import { extendTheme } from 'native-base';
 export const THEME = extendTheme({
   colors: {
     primary: {
-      700: '#996DFF'
+      700: '#996DFF',
     },
     secondary: {
-      700: '#FBA94C'
+      700: '#FBA94C',
     },
     green: {
       700: '#00875F',
@@ -20,13 +20,44 @@ export const THEME = extendTheme({
       400: '#323238',
       300: '#7C7C8A',
       200: '#C4C4CC',
-      100: '#E1E1E6'
+      100: '#E1E1E6',
     },
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+  },
+  fontConfig: {
+    Roboto: {
+      100: {
+        normal: 'Roboto_400Regular',
+      },
+      200: {
+        normal: 'Roboto_400Regular',
+      },
+      300: {
+        normal: 'Roboto_400Regular',
+      },
+      400: {
+        normal: 'Roboto_400Regular',
+      },
+      500: {
+        normal: 'Roboto_400Regular',
+      },
+      600: {
+        normal: 'Roboto_700Bold',
+      },
+      700: {
+        normal: 'Roboto_700Bold',
+      },
+      800: {
+        normal: 'Roboto_700Bold',
+      },
+      900: {
+        normal: 'Roboto_700Bold',
+      },
+    },
   },
   fonts: {
-    heading: 'Roboto_700Bold',
-    body: 'Roboto_400Regular',
+    heading: 'Roboto',
+    body: 'Roboto',
   },
   fontSizes: {
     xs: 12,
@@ -35,6 +66,6 @@ export const THEME = extendTheme({
     lg: 20,
   },
   sizes: {
-    14: 56
-  }
+    14: 56,
+  },
 });
