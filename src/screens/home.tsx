@@ -7,11 +7,28 @@ import { ChatTeardropText, SignOut } from 'phosphor-react-native';
 import { Filter } from '@/components/filter';
 import { Order, OrderProps } from '@/components/order';
 import { Button } from '@/components/button';
+import { useNavigation } from '@react-navigation/native';
 
 export const Home = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
   const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open');
-  const [orders, setOrders] = useState<OrderProps[]>([]);
+  const [orders, setOrders] = useState<OrderProps[]>([
+    {
+      id: '123',
+      patrimony: '123456',
+      when: '18/07/2022 as 18:00',
+      status: 'open',
+    },
+  ]);
+
+  const handleNewOrder = () => {
+    navigation.navigate('new');
+  };
+
+  const handleOpenDetails = (orderId: string) => {
+    navigation.navigate('details', { orderId });
+  };
 
   return (
     <VStack flex={1} pb={6} bg="gray.700">
@@ -30,7 +47,7 @@ export const Home = () => {
       <VStack flex={1} px={6}>
         <HStack w="full" mt={8} mb={6} justifyContent="space-between" alignItems="center">
           <Heading color="gray.100">Meus chamados</Heading>
-          <Text color="gray.200">3</Text>
+          <Text color="gray.200">{orders.length}</Text>
         </HStack>
         <HStack space={3} mb={8}>
           <Filter
@@ -49,7 +66,9 @@ export const Home = () => {
         <FlatList
           data={orders}
           keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => <Order data={item} />}
+          renderItem={({ item }) => (
+            <Order data={item} onPress={() => handleOpenDetails(item.id)} />
+          )}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 100 }}
           ListEmptyComponent={() => (
@@ -62,7 +81,7 @@ export const Home = () => {
             </Center>
           )}
         />
-        <Button title="Nova solicitação" />
+        <Button title="Nova solicitação" onPress={handleNewOrder} />
       </VStack>
     </VStack>
   );
