@@ -12,7 +12,8 @@ install! 'cocoapods',
 target 'rockethelp' do
   use_expo_modules!
   config = use_native_modules!
-
+  
+  use_modular_headers!
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
 
   # Flags change depending on the env values.
@@ -32,6 +33,7 @@ target 'rockethelp' do
   # if !ENV['CI']
   #   use_flipper!()
   # end
+  
 
   post_install do |installer|
     react_native_post_install(installer)
