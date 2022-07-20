@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { Alert } from 'react-native';
+import { firebase } from '@react-native-firebase/auth';
+
 import { HStack, IconButton, useTheme, VStack, Text, Heading, FlatList, Center } from 'native-base';
 
 import Logo from '@/assets/logo-secondary.svg';
@@ -30,6 +33,15 @@ export const Home = () => {
     navigation.navigate('details', { orderId });
   };
 
+  const handleLogout = async () => {
+    try {
+      await firebase.auth().signOut();
+    } catch (error) {
+      console.log(error);
+      Alert.alert('Sair', 'Não foi possível sair');
+    }
+  };
+
   return (
     <VStack flex={1} pb={6} bg="gray.700">
       <HStack
@@ -42,7 +54,7 @@ export const Home = () => {
         px={6}
       >
         <Logo />
-        <IconButton icon={<SignOut size={26} color={colors.gray[300]} />} />
+        <IconButton icon={<SignOut size={26} color={colors.gray[300]} />} onPress={handleLogout} />
       </HStack>
       <VStack flex={1} px={6}>
         <HStack w="full" mt={8} mb={6} justifyContent="space-between" alignItems="center">
