@@ -9,10 +9,11 @@ import { Button } from '@/components/button';
 import { firebase } from '@react-native-firebase/firestore';
 
 export const Register = () => {
-  const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(false);
   const [patrimony, setPatrimony] = useState('');
   const [description, setDescription] = useState('');
+
+  const navigation = useNavigation();
 
   const handleNewOrderRegister = async () => {
     if (!patrimony || !description) {

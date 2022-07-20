@@ -9,10 +9,11 @@ import { Input } from '@/components/input';
 import { Button } from '@/components/button';
 
 export const SignIn = () => {
-  const { colors } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const { colors } = useTheme();
 
   const handleSignIn = async () => {
     if (!email || !password) {

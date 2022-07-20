@@ -13,11 +13,12 @@ import { Button } from '@/components/button';
 import { dateFormat } from '@/utils/firestore-date-format';
 
 export const Home = () => {
-  const { colors } = useTheme();
-  const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
   const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open');
   const [orders, setOrders] = useState<OrderProps[]>([]);
+
+  const { colors } = useTheme();
+  const navigation = useNavigation();
 
   const handleNewOrder = () => {
     navigation.navigate('new');
