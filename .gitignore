@@ -114,3 +114,7 @@ web-build/
 dist/
 
 # @end expo-cli
+
+# firebase keys
+google-services.json
+GoogleService-Info.plist
