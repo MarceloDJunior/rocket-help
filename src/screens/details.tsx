@@ -3,7 +3,7 @@ import { Alert } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { firebase } from '@react-native-firebase/firestore';
 import { VStack, HStack, useTheme, Text, ScrollView } from 'native-base';
-import { CircleWavyCheck, Clipboard, DesktopTower, Hourglass } from 'phosphor-react-native';
+import { CircleWavyCheck, ClipboardText, DesktopTower, Hourglass } from 'phosphor-react-native';
 
 import { Button } from '@/components/button';
 import { CardDetails } from '@/components/card-details';
@@ -109,12 +109,12 @@ export const Details = () => {
           title="Equipamento"
           description={`Patrimônio ${order.patrimony}`}
           icon={DesktopTower}
-          footer={order.when}
         />
         <CardDetails
           title="Descrição do problema"
           description={order.description}
-          icon={Clipboard}
+          icon={ClipboardText}
+          footer={`Registrado em ${order.when}`}
         />
         <CardDetails
           title="Solução"
