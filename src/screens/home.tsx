@@ -70,12 +70,11 @@ export const Home = () => {
         justifyContent="space-between"
         alignItems="center"
         bg="gray.600"
-        pt={12}
-        pb={5}
         px={6}
+        py={4}
       >
         <Logo />
-        <IconButton icon={<SignOut size={26} color={colors.gray[300]} />} onPress={handleLogout} />
+        <IconButton icon={<SignOut size={24} color={colors.gray[300]} />} onPress={handleLogout} />
       </HStack>
       <VStack flex={1} px={6}>
         <HStack w="full" mt={8} mb={6} justifyContent="space-between" alignItems="center">

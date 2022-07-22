@@ -41,7 +41,7 @@ export const Register = () => {
     <VStack flex={1} bg="gray.600">
       <Header title="Solicitação" />
       <VStack flex={1} px={6} pb={6}>
-        <Input placeholder="Número do patrimônio" onChangeText={setPatrimony} />
+        <Input placeholder="Número do patrimônio" onChangeText={setPatrimony} mt={2} />
         <Input
           placeholder="Descrição do problema"
           mt={5}

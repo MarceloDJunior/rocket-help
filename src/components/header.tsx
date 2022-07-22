@@ -21,8 +21,7 @@ export const Header = ({ title, ...props }: Props) => {
       alignItems="center"
       bg="gray.600"
       px={3}
-      pb={6}
-      pt={12}
+      py={4}
       {...props}
     >
       <IconButton icon={<CaretLeft color={colors.gray[200]} size={24} />} onPress={handleGoBack} />
